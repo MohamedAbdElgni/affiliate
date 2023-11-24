@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Your Search Results - DealsGuide.co</title>
+    <meta property="site_name" content="DealsGuide">
+    <meta name="description" content="Use DealsGuide to Download Nulled Scripts, Themes, Apps and Softwares from Codecanyon for Free" />
+    <meta name="keywords"
+        content="Nulled Scripts, nulled Premium PHP Scripts, Nulled scripts torrent, Scripts Nulled, Codecanyon Scripts free Download, Premium Nulled Php Scripts, Download Nulled Scripts Free, Nulled PHP Scripts, Free Download Nulled PHP Scripts, Free Download Nulled PHP Scripts, Nulled PHP, Free PHP Scripts, php nulled script, nulled script php, script nulled,nulled script wp,nulled script,woodmart nulled script,nulled script plugins, php script, fast php script, fastest php script, simple php script, php script update, php script simple, php script church, codecanyon nulled script,codecanyon free scripts, free nulled, free wp tamplate" />
+    <meta name="author" content="DealsGuide" />
+
+    <!-- Twitter card start-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Your Search Results - DealsGuide.co">
+    <meta name="twitter:description" content="Use DealsGuide to Download Nulled Scripts, Themes, Apps and Softwares from Codecanyon for Free">
+    <meta name="twitter:image" content="https://dealsguide.co/static/img/og.jpg">
+    <meta name="twitter:image:alt" content="DealsGuide - Free Nulled Scripts, Themes, Apps and Softwares">
+    <meta name="twitter:site" content="@DealsGuide">
+    
+    {% if sample_script %}
+        <meta name="twitter:url" content="{% url 'category_list' sample_script.category|slugify %}">
+    {% else %}
+        <meta name="twitter:url" content="/">
+    {% endif %}
+    <!-- Twitter card end-->
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Your Search Results - DealsGuide.co">
+    <meta property="og:description" content="Use DealsGuide to Download Nulled Scripts, Themes, Apps and Softwares from Codecanyon for Free">
+    <meta property="og:site_name" content="DealsGuide">
+    <meta property="og:type" content="website">
+    
+    {% if sample_script %}
+        <meta property="og:url" content="{% url 'category_list' sample_script.category|slugify %}" />
+    {% else %}
+        <meta property="og:url" content="/" />
+    {% endif %}
+    
+    <meta property="og:url" content="https://dealsguide.co/result/" />
+    <meta property="og:image" content="https://dealsguide.co/static/img/og.jpg" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/site.webmanifest' %}">
+    <!-- Canonical start -->
+
+    {% if sample_script %}
+        <link rel="canonical" href="{% url 'category_list' sample_script.category|slugify %}">
+    {% else %}
+        <link rel="canonical" href="/">
+    {% endif %}
+    
+    <!-- Canonical end -->
+
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="result-section my-5">
+        <div class="container">
+            {% if flag %}
+            {% for script in scripts %}
+            <div class="row shadow rounded border mb-4">
+                <div class="col-lg-9 col-md-6">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <a href="{% url 'detail' script.slug %}"><img src="{{script.image}}" alt="{{script.title}}"
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="col-lg-5 ">
+                            <div class="description mt-3">
+                                <a href="{% url 'detail' script.slug %}">
+                                    <h4>
+                                        {{script.title}} </h4>
+                                </a>
+                                {% if script.category == 'PHP Scripts' %}
+                                <div><b>Category:</b> <a href="{% url 'php_scripts' %}">
+                                        <h7>{{script.category}}</h7>
+                                    </a>
+                                </div>
+                                {% else %}
+                                <div><b>Category:</b> <a href="{% url 'category_list' script.category|slugify %}">
+                                    <h7>{{script.category}}</h7>
+                                    </a>
+                                </div>
+                                {% endif %}
+                                <ul class="mb-3">
+                                    {% for feature in script.description %}
+                                    <li><small>{{feature}}</small></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center pt-4 border-left">
+                    <div class="price">
+                        <span>{{script.price}}</span>
+                        <span class="regular">Free</span>
+                    </div>
+                    <div class="rating">
+                        {% for i in script.range %}
+                        <img style="width:15px;" src="{% static 'img/1.png' %}">
+                        {% endfor %}
+
+                        {% if script.has_half %}
+                        <img style="width:15px;" src="{% static 'img/h.png' %}">
+                        {% endif %}
+                    </div>
+                    <div class="mb-3" style="">
+                        <small>{{script.lastUpdate}}</small>
+                    </div>
+                    <div class="shop-cart mb-3 mb-xl-0">
+                        <span class="d-inline-block d-md-none price-mobile">Free</span>
+                        <a href="{{script.preview_link}}" target="_blank" rel="nofollow" class="btn btn-outline">Live Preview</a>
+                        <a href="https://dealsguide.co/download/?{{script.title}}" target="_blank" class="btn btn-notoutline">Free Download</a>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div>
+                <h1 class="">No results found.</h1>
+                <h2 class="">We couldn't find any results for your search. Try using the name of the script.
+                </h2>
+            </div>
+            {% endif %}
+        </div>
+
+        <br>
+        <hr>
+
+        <div class="row pagination my-5">
+            <div class="col">
+                <ul class="d-flex list-unstyled justify-content-center">
+                    {% if current_page != 1 and last_page > 1 %}
+                    <li class="nav-item"><a href="{% url 'search_in_pages' current_page|add:'-1' %}"
+                            class="nav-link"><img style="width:15px;" src="{% static 'img/left.png' %}" alt="nulled"></a></li>
+                    {% endif %}
+                    {% for page in pages %}
+                    {% if last_page > 7 %}
+                    {% if page > current_page|add:'-3' and page < current_page|add:'3' %} <li class="nav-item"><a
+                            href="{% url 'search_in_pages' page %}" class="nav-link">{{page}}</a></li>
+                        {% endif %}
+                        {% else %}
+                        <li class="nav-item"><a href="{% url 'search_in_pages' page %}" class="nav-link">{{page}}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                        {% if current_page != last_page and last_page > 1 %}
+                        <li class="nav-item"><a href="{% url 'search_in_pages' current_page|add:'1' %}"
+                                class="nav-link"><img style="width:15px;" src="{% static 'img/next.png' %}"
+                                    alt="DealsGuide"></a>
+                        </li>
+                        {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="mt-5 p-3">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="menu-footer">
+                        <h4 class="border-bottom pb-2">Short Links</h4>
+                        <ul class="navbar-nav">
+                            <li><a href="/" class="nav-link">Home</a></li>
+                            <li><a href="{% url 'privacy' %}" class="nav-link">Privacy Policy</a></li>
+                            <li><a href="{% url 'dmca' %}" class="nav-link">DMCA</a></li>
+                            <li><a href="mailto:contact@dealsguide.co" class="nav-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="about-footer">
+                        <h4 class="mb-3 border-bottom pb-2">About Us</h4>
+                        <p style="text-align: justify;"><b>DealsGuide</b> is a free code library with a search tool to find and download unlimited resources, including free PHP scripts, plugins, Envato templates, Blogger templates, app source codes, and more. Find what you need or get inspired. Try DealsGuide now!</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="social-links">
+                        <h4 class="mb-3 border-bottom pb-2">Follow Us</h4>
+                        <a class="mx-2" href="https://www.facebook.com/dealsguide.co/"><img style="width:50px;"
+                                src="{% static 'img/facebook.png' %}" alt="facebook"></a>
+                        <a class="mx-2" href="https://twitter.com/DealsGuide_co"><img style="width:50px;"
+                                src="{% static 'img/social.png' %}" alt="twitter"></a>
+                        <a class="mx-2" href="https://www.instagram.com/dealsguide.co"><img style="width:50px;"
+                                src="{% static 'img/tiktok.png' %}" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center copyright">
+            Copyrights &copy; 2023 - All Right Reserved | Designed By DealsGuide.co
+        </div>
+    </footer>
+    <script src="{% static 'js/jquery3.4.js' %}"></script>
+    <script src="{%static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

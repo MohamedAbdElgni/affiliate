@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>{{script.title}} Nulled Free - DealsGuide</title>
+    <meta property="site_name" content="DealsGuide">
+    <meta name="description" content="DealsGuide - Download Nulled {{script.title}} for Free" />
+    <meta name="keywords"
+        content="php nulled script, nulled script php, script nulled,nulled script wp,nulled script,woodmart nulled script,nulled script plugins, php script, fast php script, fastest php script, simple php script, php script update, php script simple, php script church, codecanyon nulled script,codecanyon free scripts, free nulled, free wp tamplate" />
+    <meta name="author" content="DealsGuide" />
+
+    <meta property="article:published_time" content="" />
+    <meta property="article:modified_time" content="" />
+    <meta property="og:updated_time" content="" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{script.title}} Nulled Free - DealsGuide" />
+    <meta property="og:description" content="DealsGuide - Download Nulled {{script.title}} for Free" />
+    <meta property="og:site_name" content="DealsGuide" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://DealsGuide.co{% url 'detail' script.slug %}" />
+    <meta property="og:image" content="{{script.image}}" />
+
+    <!-- Canonical start -->
+    <link rel="canonical" href="https://DealsGuide.co{% url 'detail' script.slug %}">
+    <!-- Canonical end -->
+
+    <!-- Twitter card start-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{script.title}} Nulled Free - DealsGuide">
+    <meta name="twitter:description" content="DealsGuide - Download Nulled {{script.title}} for Free">
+    <meta name="twitter:image" content="{{script.image}}">
+    <meta name="twitter:image:alt" content="{{script.title}} Nulled Free - DealsGuide">
+    <meta name="twitter:site" content="@DealsGuide">
+    <meta name="twitter:url" content="https://DealsGuide.co{% url 'detail' script.slug %}">
+    <!-- Twitter card end-->
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/site.webmanifest' %}">
+
+<!-- Schema Markup Start -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Person", "Organization"],
+      "@id": "https://dealsguide.co/#person",
+      "name": "DealsGuide",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://dealsguide.co/#logo",
+        "url": "https://dealsguide.co/static_root/img/fav.png",
+        "contentUrl": "https://dealsguide.co/static_root/img/fav.png",
+        "caption": "Dealsguide",
+        "inLanguage": "en",
+        "width": "512",
+        "height": "512"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://dealsguide.co/#logo",
+        "url": "https://dealsguide.co/static_root/img/fav.png",
+        "contentUrl": "https://dealsguide.co/static_root/img/fav.png",
+        "caption": "DealsGuide",
+        "inLanguage": "en",
+        "width": "512",
+        "height": "512"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dealsguide.co/#website",
+      "url": "https://dealsguide.co",
+      "name": "DealsGuide",
+      "alternateName": "Deals Guide",
+      "publisher": {
+        "@id": "https://dealsguide.co/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "{{script.image}}",
+      "url": "{{script.image}}",
+      "width": "1280",
+      "height": "720",
+      "caption": "{{script.title}}",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://dealsguide.co{% url 'detail' script.slug %}/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": "1",
+          "item": {
+            "@id": "https://dealsguide.co",
+            "name": "Home"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": "2",
+          "item": {
+            "@id": "https://dealsguide.co{% url 'detail' script.slug %}",
+            "name": "{{script.title}}"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://dealsguide.co{% url 'detail' script.slug %}/#webpage",
+      "url": "https://dealsguide.co{% url 'detail' script.slug %}",
+      "name": "{{script.title}} Nulled Free - DealsGuide",
+      "datePublished": "",
+      "dateModified": "",
+      "isPartOf": {
+        "@id": "https://dealsguide.co/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "{{script.image}}"
+      },
+      "inLanguage": "en",
+      "breadcrumb": {
+        "@id": "https://dealsguide.co{% url 'detail' script.slug %}/#breadcrumb"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://dealsguide.co",
+      "name": "dealsguide",
+      "url": "https://dealsguide.co",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/3b666bcdc62d9b4be3687b494552103a?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/3b666bcdc62d9b4be3687b494552103a?s=96&amp;d=mm&amp;r=g",
+        "caption": "dealsguide",
+        "inLanguage": "en"
+      },
+      "sameAs": ["https://dealsguide.co"]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "{{script.title}} Nulled Free - DealsGuide",
+      "@id": "https://dealsguide.co{% url 'detail' script.slug %}/#richSnippet",
+      "isPartOf": {
+        "@id": "https://dealsguide.co{% url 'detail' script.slug %}/#webpage"
+      },
+      "image": {
+        "@id": "{{script.image}}"
+      },
+      "datePublished": "",
+      "dateModified": "",
+      "author": {
+        "@id": "https://dealsguide.co/author/admin/",
+        "name": "dealsguide"
+      },
+      "publisher": {
+        "@id": "https://dealsguide.co/#person"
+      },
+      "description": "DealsGuide - Download Nulled {{script.title}} for Free",
+      "name": "{{script.title}} Nulled Free - DealsGuide",
+      "@id": "https://dealsguide.co{% url 'detail' script.slug %}/#richSnippet",
+      "isPartOf": {
+        "@id": "https://dealsguide.co{% url 'detail' script.slug %}/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://dealsguide.co{% url 'detail' script.slug %}/#webpage"
+      }
+    }
+  ]
+}</script>
+<!-- Schema Markup End -->
+
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="details-section my-5">
+        <div class="container">
+            <div class="row shadow rounded border mb-4 py-3">
+                <div class="col-lg-8">
+                    <img src="{{script.image}}" alt="{{script.title}}" class="w-100 img-fluid">
+                </div>
+                <div class="col-lg-4 d-flex align-items-center">
+                    <div class="description text-center mt-3">
+                        <h1 style="font-size: 1.5rem !important;">
+                            {{script.title}} </h1>
+                        <div><b>Category:</b> <a href="{% url 'category_list' script.category|slugify %}">
+                                        <h7>{{script.category}}</h7>
+                            </a></div>
+                        <div class="price">
+                            <span>{{script.price}}</span>
+                            <span class="regular">Free</span>
+                        </div>
+                        <div class="rating">
+                            {% for i in range %}
+                            <img alt="rating" style="width:15px;" src="{% static 'img/1.png' %}">
+                            {% endfor %}
+
+                            {% if has_half %}
+                            <img alt="rating" style="width:15px;" src="{% static 'img/h.png' %}">
+                            {% endif %}
+                        </div>
+                        <div class="mb-3" style="">
+                            <small>{{script.lastUpdate}}</small>
+                        </div>
+                        <div class="shop-cart mb-3 mb-xl-0">
+                            <a href="{{script.preview_link}}" target="_blank" rel="nofollow" class="btn btn-outline">Live Preview</a>
+                            <a href="https://dealsguide.co/download/?{{script.title}}" target="_blank" class="btn btn-notoutline">Free Download</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4">
+                    <div class="box">
+                        <h4>Description: </h4>
+                        {% for text in detail_text %}
+                        <p>{{text}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-6 my-4">
+                    <div class="box box-blue">
+                        <table calss="table">
+                            <tbody>
+                                {% for feature in all_rows %}
+                                <tr class="border-bottom">
+                                    <td class="px-1">{{feature.0}}</td>
+                                    <td class="">{{feature.1}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- End Row -->
+            <div class="row">
+                <div class="col text-center my-5">
+                    <h3>REALTED SCRIPTS</h3>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                {% for script in similar_scripts %}
+                <div class="col-lg-4 col-sm-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{script.image}}" class="img-fluid" alt="{{script.title}}">
+                        </div>
+                        <div class="overlay">
+                            <a href="{% url 'detail' script.slug %}">
+                                <h5>{{script.title}}</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 p-3">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="menu-footer">
+                        <h4 class="border-bottom pb-2">Short Links</h4>
+                        <ul class="navbar-nav">
+                            <li><a href="/" class="nav-link">Home</a></li>
+                            <li><a href="{% url 'privacy' %}" class="nav-link">Privacy Policy</a></li>
+                            <li><a href="{% url 'dmca' %}" class="nav-link">DMCA</a></li>
+                            <li><a href="mailto:contact@DealsGuide.co" class="nav-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="about-footer">
+                        <h4 class="mb-3 border-bottom pb-2">About Us</h4>
+                        <p style="text-align: justify;"><b>DealsGuide</b> is a free code library with a search tool to find and download unlimited resources, including free PHP scripts, plugins, Envato templates, Blogger templates, app source codes, and more. Find what you need or get inspired. Try DealsGuide now!</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="social-links">
+                        <h4 class="mb-3 border-bottom pb-2">Follow Us</h4>
+                        <a class="mx-2" href="https://www.facebook.com/dealsguide.co/"><img style="width:50px;"
+                                src="{% static 'img/facebook.png' %}" alt="facebook"></a>
+                        <a class="mx-2" href="https://twitter.com/DealsGuide_co"><img style="width:50px;"
+                                src="{% static 'img/social.png' %}" alt="twitter"></a>
+                        <a class="mx-2" href="https://www.instagram.com/dealsguide.co"><img style="width:50px;"
+                                src="{% static 'img/tiktok.png' %}" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center copyright">
+            Copyrights &copy; 2023 - All Right Reserved | Designed By DealsGuide.co
+        </div>
+    </footer>
+    <script src="{% static 'js/jquery3.4.js' %}"></script>
+    <script src="{%static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

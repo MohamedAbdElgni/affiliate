@@ -1,0 +1,18 @@
+{% load static %}
+{% include 'navbar.html' %}
+<div class="hero-section">
+    <h2 class="text-white">Download Nulled Scripts, Themes, Plugins for Free</h2>
+    <h4 class="color-gray mb-3">Code Library to Download Any Premium Scripts, Themes, Plugins from Codecanyon, Absolutely Free!
+    </h4>
+    <div class="search-holder">
+        <form action="{% url 'search' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="ex: Script" autocomplete="off"
+                    name="search">
+                <span class="search-span"><button class="search-btn" type="submit"><img style="width:20px;"
+                            src="{% static 'img/search.png' %}" alt="search"></button></span>
+            </div>
+        </form>
+    </div>
+</div>

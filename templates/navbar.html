@@ -1,0 +1,58 @@
+<header>
+    <nav class="navbar navbar-expand-xl fixed-top navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand mr-5" href="/">DealsGuide.co</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menu1" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            Scripts
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="menu1">
+                            <li><a class="dropdown-item" href="/php-scripts/add-ons">Add-on</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/Calendars">Calendars</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/Countdowns">Countdowns</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/database-abstractions">Database Abstractions</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/Forms">Forms</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/help-and-support-tools">Help and Support Tools</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/images-and-media">Images and Media</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/loaders-and-uploaders">Loaders and Uploaders</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/Navigation">Navigation</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/news-tickers">News Tickers</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/Polls">Polls</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/project-management-tools">Project Management Tools</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/ratings-and-charts">Ratings and Charts</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/Search">Search</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/shopping-carts">Shopping Carts</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/social-networking">Social Networking</a></li>
+                            <li><a class="dropdown-item" href="/php-scripts/Miscellaneous">Miscellaneous</a></li>
+
+                        </ul>
+                    </li>
+                    {% for cat in main_cat %}
+                    <li class="nav-item dropdown">
+                        {% for choice in cat.items %} 
+                            <a class="nav-link dropdown-toggle" href="#" id="menu2" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                {{choice.0}}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="menu1">
+                            {% for sub_cat in choice.1 %}
+                                <li><a class="dropdown-item" href="{% url 'main_category' choice.0 sub_cat %}">{{sub_cat}}</a></li>
+                            {% endfor %}
+                            </ul>
+                        {% endfor %}
+                    </li>
+                    {% endfor %}
+                </ul>
+               </div>
+        </div>
+    </nav>
+</header>
